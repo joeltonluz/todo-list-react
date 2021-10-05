@@ -4,9 +4,10 @@ import * as C from './styles';
 
 type OnEnterProps = {
   onEnter: (taskname: string) => void;
+  clearAll: () => void;
 }
 
-export function AddArea({ onEnter }: OnEnterProps) {
+export function AddArea({ onEnter, clearAll }: OnEnterProps) {
   const [inputtext, setInputtext] = useState('');
 
   function handleKeyUP(e: KeyboardEvent) {
@@ -26,6 +27,7 @@ export function AddArea({ onEnter }: OnEnterProps) {
         onChange={e => setInputtext(e.target.value)}
         onKeyUp={handleKeyUP}
       />
+      <button type="button" onClick={clearAll} >Limpar Lista</button>
     </C.Container>
   );
 }

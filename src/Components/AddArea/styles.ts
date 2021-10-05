@@ -21,4 +21,21 @@ export const Container = styled.div`
     font-size: 18px;
     flex: 1;
   }
+
+  button {
+    background: transparent;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #FFA07A;
+    font-size: 16px;
+    font-weight: 700;
+
+    transition: filter 0.3s;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
 `;

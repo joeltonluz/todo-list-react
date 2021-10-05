@@ -15,11 +15,26 @@ export const Container = styled.div(({ done }: ContainerProps) => (`
   label {
     color: #ccc;
     text-decoration: ${done ? 'line-through' : 'initial'};
+    flex: 1;
   }
 
   input {
     width: 25px;
     height: 25px;
     margin-right: 5px;
+  }
+
+  button {
+    background: transparent;
+  }
+
+  .trashIco {
+    cursor: pointer;
+    transition: filter 0.2s;
+    color: #FF6347;
+
+    &:hover {
+      filter: brightness(0.7);
+    }
   }
 `));

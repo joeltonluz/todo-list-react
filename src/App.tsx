@@ -4,7 +4,6 @@ import * as C from './App.styles';
 import { ListItem } from './Components/ListItem';
 import { AddArea } from './Components/AddArea';
 
-
 import { Item } from './types/Item';
 
 export function App () {
@@ -23,15 +22,25 @@ export function App () {
     setList(newList);
   }
 
+  function handleClearTask(indice: number) {
+    let newList = [...list];
+    newList.splice(indice-1,1);
+    setList(newList);
+  }
+
+  function handleClearAllTasks() {
+    setList([]);    
+  }
+
   return (
     <C.Container>
       <C.Area>
         <C.Header>To Do List - Typescript (Simple)</C.Header>
 
-        <AddArea onEnter={handleAddTask} />
+        <AddArea onEnter={handleAddTask} clearAll={handleClearAllTasks} />
 
         {list.map((item, index) => (
-          <ListItem key={index} item={item} />
+          <ListItem key={index} item={item} clearTask={handleClearTask} />
         ))}
       </C.Area>
     </C.Container>
